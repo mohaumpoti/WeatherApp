@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct WeatherForecastItem: Codable {
     let dt: Int
@@ -18,6 +19,21 @@ struct WeatherForecastItem: Codable {
     let rain: Rain?
     let sys: SysForecast
     let dt_txt: String
+    
+    var weekday: String {
+        let date = Date(timeIntervalSince1970: TimeInterval(dt))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        
+        return dateFormatter.string(from: date)
+    }
+
+    var icon: UIImage? {
+        guard let mainWeather = weather.first?.main else { return nil }
+        let weatherType = WeatherType(rawValue: mainWeather.lowercased())
+        
+        return weatherType?.icon
+    }
     
     var temperatureAsString: String {
         "\(Int(main.temp.toCelsius))° C"

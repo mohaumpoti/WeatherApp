@@ -51,10 +51,7 @@ class WeatherTableViewCell: UITableViewCell {
     
     func populate(using weatherItem: WeatherForecastItem, and backgroundColor: UIColor?) {
         // day label
-        let date = Date(timeIntervalSince1970: TimeInterval(weatherItem.dt))
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        dayLabel.text = dateFormatter.string(from: date)
+        dayLabel.text = weatherItem.weekday
         
         // temperature label
         temperatureLabel.text = weatherItem.temperatureAsString
@@ -63,9 +60,7 @@ class WeatherTableViewCell: UITableViewCell {
         contentView.backgroundColor = backgroundColor
         
         // weather icon
-        guard let mainWeather = weatherItem.weather.first?.main else { return }
-        let weatherType = WeatherType(rawValue: mainWeather.lowercased())
-        weatherIcon.image = weatherType?.icon
+        weatherIcon.image = weatherItem.icon
     }
     
     private func setupViews() {        
