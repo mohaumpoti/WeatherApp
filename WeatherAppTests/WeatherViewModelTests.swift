@@ -31,13 +31,9 @@ class WeatherViewModelTests: XCTestCase {
     }
     
     func test_temperature_is_valid_value() {
-        let temperature = Int(weatherViewModel.temperature)
-        let minTemperature = Int(weatherViewModel.minTemperature)
-        let maxTemperature = Int(weatherViewModel.maxTemperature)
-        
-        XCTAssertNotNil(temperature)
-        XCTAssertNotNil(minTemperature)
-        XCTAssertNotNil(maxTemperature)
+        XCTAssertNotNil(weatherViewModel.temperature)
+        XCTAssertNotNil(weatherViewModel.minTemperature)
+        XCTAssertNotNil(weatherViewModel.maxTemperature)
     }
     
     func test_max_temp_is_greater_than_or_equal_to_min_temp() {
