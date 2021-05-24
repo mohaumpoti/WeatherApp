@@ -15,6 +15,9 @@ class WeatherViewController: UIViewController {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         
+        view.addSubview(errorLabel)
+        view.embed(errorLabel)
+        
         view.addSubview(headerCurrentTemperatureLabel)
         NSLayoutConstraint.activate([
             headerCurrentTemperatureLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
@@ -28,6 +31,17 @@ class WeatherViewController: UIViewController {
         ])
         
         return view
+    }()
+    
+    private lazy var errorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .red
+        label.backgroundColor = .lightGray
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 28)
+        return label
     }()
     
     private lazy var headerCurrentTemperatureLabel: UILabel = {
@@ -169,6 +183,14 @@ class WeatherViewController: UIViewController {
 
         return tableView
     }()
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.style = .large
+        view.color = .white
+        return view
+    }()
 
     let interactor = WeatherInteractor()
     var viewModels: [WeatherForecastItem] = [] {
@@ -191,6 +213,7 @@ class WeatherViewController: UIViewController {
         super.viewDidAppear(animated)
         interactor.view = self
         interactor.viewDidAppear()
+        activityIndicator.startAnimating()
     }
     
     // MARK: - Helpers
@@ -209,6 +232,13 @@ class WeatherViewController: UIViewController {
         // set view background colors
         temperatureContainerView.backgroundColor = viewModel.weatherType?.color
         tableView.backgroundColor = viewModel.weatherType?.color
+        
+        activityIndicator.stopAnimating()
+    }
+    
+    func update(with errorMessage: String) {
+        errorLabel.text = errorMessage
+        activityIndicator.stopAnimating()
     }
     
     private func setupConstraints() {
@@ -247,6 +277,10 @@ class WeatherViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: underlineView.bottomAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
+        // activity indicator
+        view.addSubview(activityIndicator)
+        headerImageView.embed(activityIndicator)
     }
 }
 

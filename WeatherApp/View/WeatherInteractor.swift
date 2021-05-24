@@ -9,10 +9,14 @@ import Foundation
 import CoreLocation
 
 class WeatherInteractor: NSObject {
+    
+    // MARK: - View Properties
      
     private var currentLocation: CLLocation?
     private let locationManager = CLLocationManager()
     weak var view: WeatherViewController?
+    
+    // MARK: - Helpers
     
     func viewDidAppear() {
         setupLocation()
@@ -24,6 +28,8 @@ class WeatherInteractor: NSObject {
         locationManager.startUpdatingLocation()
     }
 }
+
+// MARK: - CLLocationManagerDelegate
 
 extension WeatherInteractor: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -44,18 +50,19 @@ extension WeatherInteractor: CLLocationManagerDelegate {
                     self?.view?.update(with: response.viewModel)
                 }
             case .failure(let error):
-                print()
+                DispatchQueue.main.async {
+                    self?.view?.update(with: error.localizedDescription)
+                }
             }
         }
     }
     
     private func requestForecast(for location: CLLocation) {
-        WebService.requestForecast(for: location) { (result) in
+        WebService.requestForecast(for: location) { [weak self] (result) in
             switch result {
             case .success(let response):
-                self.view?.viewModels = response.viewModels
-            case .failure(let error):
-                print()
+                self?.view?.viewModels = response.viewModels
+            case .failure( _): break
             }
         }
     }

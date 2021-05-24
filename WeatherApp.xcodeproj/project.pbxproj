@@ -156,8 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				29C3909A265BB4CF00B942AA /* Cell */,
-				291C7EBE265B8B68000A2E4E /* WeatherInteractor.swift */,
 				29C390AB265BC72500B942AA /* WeatherViewController.swift */,
+				291C7EBE265B8B68000A2E4E /* WeatherInteractor.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
