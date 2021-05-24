@@ -8,8 +8,8 @@
 import Foundation
 
 extension Double {
-    // converts from Kelvin to Celcious
-    var toCelcious: Double {
+    /// converts the temperature from Kelvin to Celsius
+    var toCelsius: Double {
         self - 273.15
     }
 }

@@ -57,7 +57,7 @@ class WeatherTableViewCell: UITableViewCell {
         dayLabel.text = dateFormatter.string(from: date)
         
         // temperature label
-        temperatureLabel.text = "\(Int(weatherItem.main.temp.toCelcious))° C"
+        temperatureLabel.text = weatherItem.temperatureAsString
         
         // cell background color
         contentView.backgroundColor = backgroundColor

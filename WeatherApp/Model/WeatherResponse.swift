@@ -30,9 +30,9 @@ struct WeatherResponse: Codable {
         return .init(
             weatherType: weatherType,
             city: name,
-            temperature: main.temp.toCelcious,
-            minTemperature: main.temp_min.toCelcious,
-            maxTemperature: main.temp_max.toCelcious
+            temperature: main.temp,
+            minTemperature: main.temp_min,
+            maxTemperature: main.temp_max
         )
     }
 }

@@ -18,4 +18,16 @@ struct WeatherForecastItem: Codable {
     let rain: Rain?
     let sys: SysForecast
     let dt_txt: String
+    
+    var temperatureAsString: String {
+        "\(Int(main.temp.toCelsius))° C"
+    }
+    
+    var minTemperatureAsString: String {
+        "\(Int(main.temp_min.toCelsius))° C"
+    }
+
+    var maxTemperatureAsString: String {
+        "\(Int(main.temp_max.toCelsius))° C"
+    }
 }

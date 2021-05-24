@@ -13,4 +13,16 @@ struct WeatherViewModel {
     let temperature: Double
     let minTemperature: Double
     let maxTemperature: Double
+    
+    var temperatureAsString: String {
+        "\(Int(temperature.toCelsius))° C"
+    }
+    
+    var minTemperatureAsString: String {
+        "\(Int(minTemperature.toCelsius))° C"
+    }
+    
+    var maxTemperatureAsString: String {
+        "\(Int(maxTemperature.toCelsius))° C"
+    }
 }
