@@ -37,7 +37,7 @@ enum WeatherType: String {
         }
     }
     
-    var color: UIColor? {
+    var backgroundColor: UIColor? {
         switch self {
         case .clouds: return UIColor(red: 0.33, green: 0.44, blue: 0.48, alpha: 1.00)
         case .rain: return UIColor(red: 0.34, green: 0.34, blue: 0.36, alpha: 1.00)

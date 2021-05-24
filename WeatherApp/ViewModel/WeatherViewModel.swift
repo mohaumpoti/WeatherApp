@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct WeatherViewModel {
     let weatherType: WeatherType?
@@ -13,6 +14,18 @@ struct WeatherViewModel {
     let temperature: Double
     let minTemperature: Double
     let maxTemperature: Double
+    
+    var backgroundImage: UIImage? {
+        weatherType?.backgroundImage
+    }
+    
+    var backgroundColor: UIColor? {
+        weatherType?.backgroundColor
+    }
+    
+    var description: String? {
+        weatherType?.description
+    }
     
     var temperatureAsString: String {
         "\(Int(temperature.toCelsius))° C"

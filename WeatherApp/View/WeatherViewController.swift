@@ -243,10 +243,10 @@ class WeatherViewController: UIViewController {
     // MARK: - Helpers
     
     func update(with viewModel: WeatherViewModel) {
-        headerImageView.image = viewModel.weatherType?.backgroundImage
+        headerImageView.image = viewModel.backgroundImage
         headerCityLabel.text = viewModel.city
         headerCurrentTemperatureLabel.text = viewModel.temperatureAsString
-        headerWeatherDescriptionLabel.text = viewModel.weatherType?.description
+        headerWeatherDescriptionLabel.text = viewModel.description
         
         // populate min, current and max temperature labels
         minTemperatureLabel.text = viewModel.minTemperatureAsString
@@ -254,8 +254,8 @@ class WeatherViewController: UIViewController {
         maxTemperatureLabel.text = viewModel.maxTemperatureAsString
         
         // set view background colors
-        temperatureContainerView.backgroundColor = viewModel.weatherType?.color
-        tableView.backgroundColor = viewModel.weatherType?.color
+        temperatureContainerView.backgroundColor = viewModel.backgroundColor
+        tableView.backgroundColor = viewModel.backgroundColor
         
         errorLabel.isHidden = true
         activityIndicator.stopAnimating()
