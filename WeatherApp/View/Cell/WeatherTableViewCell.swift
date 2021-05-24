@@ -62,9 +62,7 @@ class WeatherTableViewCell: UITableViewCell {
         weatherIcon.image = weatherType?.icon
     }
     
-    private func setupViews() {
-        contentView.backgroundColor = .orange
-        
+    private func setupViews() {        
         // day label
         contentView.addSubview(dayLabel)
         NSLayoutConstraint.activate([
