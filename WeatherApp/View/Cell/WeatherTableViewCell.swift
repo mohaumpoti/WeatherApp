@@ -21,10 +21,8 @@ class WeatherTableViewCell: UITableViewCell {
     private let weatherIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "clear")
         imageView.tintColor = .white
-        imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .clear
+        imageView.layer.borderWidth = 0
         return imageView
     }()
     
