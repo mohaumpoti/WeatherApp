@@ -29,6 +29,7 @@ struct WeatherResponse: Codable {
         }
         return .init(
             weatherType: weatherType,
+            city: name,
             temperature: "\(Int(main.temp))°",
             minTemperature: "\(Int(main.temp_min))°",
             maxTemperature: "\(Int(main.temp_max))°"

@@ -9,6 +9,7 @@ import Foundation
 
 struct WeatherViewModel {
     let weatherType: WeatherType?
+    let city: String
     let temperature: String
     let minTemperature: String
     let maxTemperature: String

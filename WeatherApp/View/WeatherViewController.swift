@@ -18,9 +18,15 @@ class WeatherViewController: UIViewController {
         view.addSubview(errorLabel)
         view.embed(errorLabel)
         
+        view.addSubview(headerCityLabel)
+        NSLayoutConstraint.activate([
+            headerCityLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+            headerCityLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
         view.addSubview(headerCurrentTemperatureLabel)
         NSLayoutConstraint.activate([
-            headerCurrentTemperatureLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            headerCurrentTemperatureLabel.topAnchor.constraint(equalTo: headerCityLabel.topAnchor, constant: 32),
             headerCurrentTemperatureLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
@@ -41,6 +47,15 @@ class WeatherViewController: UIViewController {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 28)
+        return label
+    }()
+    
+    private lazy var headerCityLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 24)
+        label.textColor = .white
         return label
     }()
     
@@ -216,11 +231,16 @@ class WeatherViewController: UIViewController {
         activityIndicator.startAnimating()
     }
     
+    override var shouldAutorotate: Bool {
+        false
+    }
+    
     // MARK: - Helpers
     
     func update(with viewModel: WeatherViewModel) {
         // populate header views
         headerImageView.image = viewModel.weatherType?.backgroundImage
+        headerCityLabel.text = viewModel.city
         headerCurrentTemperatureLabel.text = viewModel.temperature
         headerWeatherDescriptionLabel.text = viewModel.weatherType?.description
         
@@ -233,11 +253,13 @@ class WeatherViewController: UIViewController {
         temperatureContainerView.backgroundColor = viewModel.weatherType?.color
         tableView.backgroundColor = viewModel.weatherType?.color
         
+        errorLabel.isHidden = true
         activityIndicator.stopAnimating()
     }
     
     func update(with errorMessage: String) {
         errorLabel.text = errorMessage
+        errorLabel.isHidden = false
         activityIndicator.stopAnimating()
     }
     

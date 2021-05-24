@@ -17,7 +17,7 @@ class WebService {
         let longitude = location.coordinate.longitude
         let latitude = location.coordinate.latitude
         let urlStr =
-            "https://api.oopenweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=2296c433bf2284841dd5a33ceead1f25"
+            "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=2296c433bf2284841dd5a33ceead1f25"
 
         guard let url = URL(string: urlStr) else { return }
         
