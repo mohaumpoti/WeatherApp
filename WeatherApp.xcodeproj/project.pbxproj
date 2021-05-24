@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		291C7E58265AA44B000A2E4E /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C7E57265AA44B000A2E4E /* WeatherResponse.swift */; };
-		291C7E60265AA488000A2E4E /* WeatherForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C7E5F265AA488000A2E4E /* WeatherForecastResponse.swift */; };
 		291C7E65265AA4B8000A2E4E /* WeatherForecastItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C7E64265AA4B8000A2E4E /* WeatherForecastItem.swift */; };
 		291C7E6A265AA4E4000A2E4E /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C7E69265AA4E4000A2E4E /* Coordinate.swift */; };
 		291C7E6F265AA4FD000A2E4E /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291C7E6E265AA4FD000A2E4E /* Weather.swift */; };
@@ -55,8 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		291C7E57265AA44B000A2E4E /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
-		291C7E5F265AA488000A2E4E /* WeatherForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastResponse.swift; sourceTree = "<group>"; };
 		291C7E64265AA4B8000A2E4E /* WeatherForecastItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastItem.swift; sourceTree = "<group>"; };
 		291C7E69265AA4E4000A2E4E /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		291C7E6E265AA4FD000A2E4E /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -119,8 +115,6 @@
 		291C7E56265A7A0F000A2E4E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				291C7E57265AA44B000A2E4E /* WeatherResponse.swift */,
-				291C7E5F265AA488000A2E4E /* WeatherForecastResponse.swift */,
 				291C7E64265AA4B8000A2E4E /* WeatherForecastItem.swift */,
 				291C7E69265AA4E4000A2E4E /* Coordinate.swift */,
 				291C7E6E265AA4FD000A2E4E /* Weather.swift */,
@@ -383,12 +377,10 @@
 				291C7E7E265AA592000A2E4E /* Wind.swift in Sources */,
 				2960312A26514C400016B0A1 /* AppDelegate.swift in Sources */,
 				2960312C26514C400016B0A1 /* SceneDelegate.swift in Sources */,
-				291C7E60265AA488000A2E4E /* WeatherForecastResponse.swift in Sources */,
 				291C7E79265AA566000A2E4E /* MainForecast.swift in Sources */,
 				291C7EB1265B8AE6000A2E4E /* WeatherViewModel.swift in Sources */,
 				291C7E65265AA4B8000A2E4E /* WeatherForecastItem.swift in Sources */,
 				291C7EBF265B8B68000A2E4E /* WeatherInteractor.swift in Sources */,
-				291C7E58265AA44B000A2E4E /* WeatherResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
