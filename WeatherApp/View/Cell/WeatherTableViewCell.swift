@@ -8,6 +8,8 @@
 import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
+    // MARK: - Properties
+    
     static let identifier: String = "WeatherTableViewCell"
     
     private let dayLabel: UILabel = {
@@ -34,6 +36,8 @@ class WeatherTableViewCell: UITableViewCell {
         return label
     }()
     
+    // MARK: - Initialization
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
@@ -42,6 +46,8 @@ class WeatherTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Helpers
     
     func populate(using weatherItem: WeatherForecastItem, and backgroundColor: UIColor?) {
         // day label
