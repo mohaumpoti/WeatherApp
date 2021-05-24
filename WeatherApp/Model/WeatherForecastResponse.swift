@@ -20,8 +20,17 @@ struct WeatherForecastResponse: Codable {
     let sunset: Int?
     
     var viewModels: [WeatherForecastItem] {
-        return Dictionary(grouping: list,
-                       by: { Calendar.current.startOfDay(for: Date(timeIntervalSince1970: TimeInterval($0.dt))) })
-            .compactMap { $0.value.first }
+        let listGroupedByDay =
+            Dictionary(grouping: list,
+                              by: { Calendar.current.startOfDay(for: Date(timeIntervalSince1970: TimeInterval($0.dt))) })
+                   .compactMap { $0.value.first }
+        
+        let listSortedByDate = listGroupedByDay.sorted {
+            let firstDate = Date(timeIntervalSince1970: TimeInterval($0.dt))
+            let secondDate = Date(timeIntervalSince1970: TimeInterval($1.dt))
+            return firstDate < secondDate
+        }
+        
+        return listSortedByDate
     }
 }
