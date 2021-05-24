@@ -35,6 +35,7 @@
 		29C390AC265BC72500B942AA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C390AB265BC72500B942AA /* WeatherViewController.swift */; };
 		29C3913D265C002600B942AA /* WeatherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3913C265C002600B942AA /* WeatherViewModelTests.swift */; };
 		29C3914D265C143200B942AA /* CLError+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3914C265C143200B942AA /* CLError+Extension.swift */; };
+		29C39157265C1C1900B942AA /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C39156265C1C1900B942AA /* Double+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		29C390AB265BC72500B942AA /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		29C3913C265C002600B942AA /* WeatherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTests.swift; sourceTree = "<group>"; };
 		29C3914C265C143200B942AA /* CLError+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLError+Extension.swift"; sourceTree = "<group>"; };
+		29C39156265C1C1900B942AA /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				291C7EA5265AA78D000A2E4E /* UIView+Extension.swift */,
 				291C7EAA265AA7CF000A2E4E /* Data+Extension.swift */,
 				29C3914C265C143200B942AA /* CLError+Extension.swift */,
+				29C39156265C1C1900B942AA /* Double+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				291C7E83265AA5AC000A2E4E /* Cloud.swift in Sources */,
 				29C3909C265BB4EC00B942AA /* WeatherTableViewCell.swift in Sources */,
 				291C7E97265AA63A000A2E4E /* SysForecast.swift in Sources */,
+				29C39157265C1C1900B942AA /* Double+Extension.swift in Sources */,
 				291C7E6F265AA4FD000A2E4E /* Weather.swift in Sources */,
 				291C7E6A265AA4E4000A2E4E /* Coordinate.swift in Sources */,
 				29C390A7265BC3E200B942AA /* WeatherType.swift in Sources */,
