@@ -13,7 +13,9 @@ class WebService {
     
     private init() {}
     
-    static func requestWeather(for location: CLLocation, completion: @escaping (Swift.Result<WeatherResponse, Error>) -> ()) {
+    static func requestWeather(
+        for location: CLLocation,
+        completion: @escaping (Swift.Result<WeatherResponse, Error>) -> ()) {
         let longitude = location.coordinate.longitude
         let latitude = location.coordinate.latitude
         let urlStr =
@@ -38,7 +40,9 @@ class WebService {
         }.resume()
     }
     
-    static func requestForecast(for location: CLLocation, completion: @escaping (Swift.Result<WeatherForecastResponse, Error>) -> ()) {
+    static func requestForecast(
+        for location: CLLocation,
+        completion: @escaping (Swift.Result<WeatherForecastResponse, Error>) -> ()) {
         let longitude = location.coordinate.longitude
         let latitude = location.coordinate.latitude
         let urlStr =
