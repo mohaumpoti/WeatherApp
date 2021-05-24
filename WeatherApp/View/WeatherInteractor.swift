@@ -42,6 +42,14 @@ extension WeatherInteractor: CLLocationManagerDelegate {
         requestForecast(for: currentLocation)
     }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        guard let errorDescription = (error as? CLError)?.errorDescription else {
+            view?.update(with: "There was an error accsing the weather data")
+            return
+        }
+        view?.update(with: errorDescription)
+    }
+    
     private func requestWeather(for location: CLLocation) {
         WebService.requestWeather(for: location) { [weak self] (result) in
             switch result {

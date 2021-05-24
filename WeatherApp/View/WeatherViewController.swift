@@ -16,7 +16,12 @@ class WeatherViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(errorLabel)
-        view.embed(errorLabel)
+        NSLayoutConstraint.activate([
+            errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            errorLabel.topAnchor.constraint(equalTo: view.topAnchor),
+            errorLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
         
         view.addSubview(headerCityLabel)
         NSLayoutConstraint.activate([
@@ -46,7 +51,7 @@ class WeatherViewController: UIViewController {
         label.backgroundColor = .lightGray
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 28)
+        label.font = UIFont.systemFont(ofSize: 22)
         return label
     }()
     
