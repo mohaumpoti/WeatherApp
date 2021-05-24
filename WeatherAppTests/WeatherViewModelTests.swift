@@ -16,9 +16,9 @@ class WeatherViewModelTests: XCTestCase {
         weatherViewModel = WeatherViewModel(
             weatherType: nil,
             city: "Maseru",
-            temperature: "21",
-            minTemperature: "18",
-            maxTemperature: "32"
+            temperature: 21.3,
+            minTemperature: 18,
+            maxTemperature: 32.46
         )
     }
     
@@ -41,23 +41,14 @@ class WeatherViewModelTests: XCTestCase {
     }
     
     func test_max_temp_is_greater_than_or_equal_to_min_temp() {
-        let minTemperature = Int(weatherViewModel.minTemperature)
-        let maxTemperature = Int(weatherViewModel.maxTemperature)
-        
-        XCTAssertGreaterThanOrEqual(maxTemperature!, minTemperature!)
+        XCTAssertGreaterThanOrEqual(weatherViewModel.maxTemperature, weatherViewModel.minTemperature)
     }
     
     func test_temp_is_greater_than_or_equal_to_min_temp() {
-        let temperature = Int(weatherViewModel.temperature)
-        let minTemperature = Int(weatherViewModel.minTemperature)
-        
-        XCTAssertGreaterThanOrEqual(temperature!, minTemperature!)
+        XCTAssertGreaterThanOrEqual(weatherViewModel.temperature, weatherViewModel.minTemperature)
     }
     
     func test_min_temp_is_less_than_or_equal_to_max_temp() {
-        let temperature = Int(weatherViewModel.temperature)
-        let maxTemperature = Int(weatherViewModel.maxTemperature)
-        
-        XCTAssertLessThanOrEqual(temperature!, maxTemperature!)
+        XCTAssertLessThanOrEqual(weatherViewModel.temperature, weatherViewModel.maxTemperature)
     }
 }
